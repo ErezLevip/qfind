@@ -9,7 +9,7 @@ namespace qfind.Implementations
 {
     public class ImportIndexer : IIndexer
     {
-        private static List<KeyValuePair<string, Index>> _loadedIndexes = new List<KeyValuePair<string, Index>>();
+        private static List<Index> _loadedIndexes = new List<Index>();
         private readonly IDbAdapter _dbAdapter;
         private readonly DefaultsConfigSection _defaultsConfig;
         public ImportIndexer(IDbAdapter dbAdapter, DefaultsConfigSection defaultsConfig)
@@ -20,7 +20,7 @@ namespace qfind.Implementations
 
         private void LoadAllIndexes(IEnumerable<Index> indexes)
         {
-            _loadedIndexes = indexes.Select(i => new KeyValuePair<string, Index>(i.SearchKey, i)).ToList();
+            _loadedIndexes = indexes.ToList();
         }
 
         public async Task<IEnumerable<Index>> Get(IEnumerable<string> keys, bool fileNameOnly, bool explicitValue)

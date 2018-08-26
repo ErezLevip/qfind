@@ -6,8 +6,8 @@
   </PropertyGroup>
 
 <ItemGroup>
-  <None Include="$(SolutionDir)config\**" CopyToOutputDirectory="PreserveNewest" LinkBase="config\" />
-  <None Include="$(SolutionDir)dbconfig\**" CopyToOutputDirectory="PreserveNewest" LinkBase="dbconfig\" />
+    <None Include="defaultsconfig.json" CopyToOutputDirectory="PreserveNewest"/>
+  <None Include="dbconfig.json" CopyToOutputDirectory="PreserveNewest"/>
 </ItemGroup>
   <ItemGroup>
     <PackageReference Include="McMaster.Extensions.CommandLineUtils" Version="2.2.5" />

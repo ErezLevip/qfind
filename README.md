@@ -1,2 +1,2 @@
 # qfind
-qfind is a simple search written in .net core
+qfind is a simple search written in .net core  
